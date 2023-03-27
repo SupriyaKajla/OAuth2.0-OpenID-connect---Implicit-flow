@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">DIT</a>
+  
+ 
+</nav>    
+<div class="main container">
+<div *ngIf = "isLoggedIn()">
+<div class="container"> Welcome </div>
+<div class="container"> Name: {{ userInfo?.info?.name}} </div>
+<div class="container"> Email: {{ userInfo?.info?.email}}  </div>
+
+<div class="container">  
+  <button (click)="getEmails()">Open Emails</button>
+</div>
+<div class="container" *ngFor="let snippet of mailSnippets">
+  {{ snippet }}
+</div>
+
+<div class="container">  
+<button (click)="logout()"> Logout from Google</button>          
+</div>
+
+
+</div>
+</div>
